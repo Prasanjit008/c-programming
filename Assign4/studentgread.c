@@ -1,27 +1,46 @@
 // grade of the student //
 
 #include <stdio.h>
-int main() 
+
+void main()
 {
-  float m1, m2, m3, avg;
+    float m1, m2, m3, average;
 
-  printf("Enter marks of 3 subjects: ");
-  scanf("%f %f %f", &m1, &m2, &m3);
+    printf("Enter marks of three subjects: ");
+    scanf("%f %f %f", &m1, &m2, &m3);
 
-  avg = (m1 + m2 + m3) / 3;
+    average = (m1 + m2 + m3) / 3;
 
-  if (avg >= 90)
-    printf("Grade: O\n");
-  if (avg >= 80 && avg < 90)
-    printf("Grade: E\n");
-  if (avg >= 70 && avg < 80)
-    printf("Grade: A\n");
-  if (avg >= 60 && avg < 70)
-    printf("Grade: B\n");
-  if (avg >= 50 && avg < 60)
-    printf("Grade: C\n");
-  if (avg >= 40 && avg < 50)
-    printf("Grade: D\n");
-  if (avg < 40)
-    printf("Grade: F\n");
+    printf("Average Mark = %.2f\n", average);
+
+    if (average >= 90)
+    {
+        printf("Grade = O");
+    }
+    else if (average >= 80)
+    {
+        printf("Grade = E");
+    }
+    else if (average >= 70)
+    {
+        printf("Grade = A");
+    }
+    else if (average >= 60)
+    {
+        printf("Grade = B");
+    }
+    else if (average >= 50)
+    {
+        printf("Grade = C");
+    }
+    else if (average >= 40)
+    {
+        printf("Grade = D");
+    }
+    else
+    {
+        printf("Grade = F");
+    }
+
+   
 }
