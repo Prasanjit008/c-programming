@@ -1,0 +1,228 @@
+#pr5
+//To find out the largest among 10 numbers
+#include <stdio.h>
+void main()
+{
+    int i, num, largest;
+    printf("Enter 10 numbers:\n");
+    scanf("%d", &largest);
+    for(i = 2; i <= 10; i++)
+    {
+        scanf("%d", &num);
+        largest = (num > largest) ? num : largest;
+    }
+    printf("Largest number = %d", largest);
+}
+
+#pr6
+//To check whether an inputted number is a prime number or a composite number.
+#include <stdio.h>
+void main()
+{
+    int i, num, count=0;
+    printf("Enter any number: ");
+    scanf("%d", &num);
+    for(i=1;i<=num;i++)
+    {
+        if(num%i==0)
+            count+=1;
+    }
+    if(count==2)
+        printf("%d is prime number.\n", num);
+    else
+        printf("%d is composite number.\n", num);
+}
+
+#pr7
+//To check whether an inputted number is a palindrome number or not.
+#include <stdio.h>
+void main()
+{
+    int n, n1, rev=0, rem;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    n1=n;
+    while(n!=0)
+    {
+        rem= n%10;
+        rev=(rev*10)+rem;
+        n=n/10;
+    }
+    if(n1 == rev)
+        printf("The %d is a palindrome.\n", n1);
+    else
+        printf("The %d is not a palindrome.\n", n1);
+}
+
+#pr8
+//To check whether an inputted number is an Armstrong number or not.
+#include <stdio.h>
+void main()
+{
+    int n, n1, rem, sum = 0;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    n1=n;
+    while(n!=0)
+    {
+        rem=n%10;
+        sum=sum+rem*rem*rem;
+        n=n/10;
+    }
+    if(n1 == sum)
+        printf("The %d is an Armstrong number.\n", n1);
+    else
+        printf("The %d is not an Armstrong number.\n", n1);
+}
+
+#pr9
+//To convert a decimal number into binary.
+#include <stdio.h>
+void main()
+{
+    int n, rem, bin=0, place=1;
+    printf("Enter a decimal number: ");
+    scanf("%d", &n);
+    while(n!=0)
+    {
+        rem=n%2;
+        bin=bin+rem*place;
+        n=n/2;
+        place = place * 10;
+    }
+    printf("Binary equivalent = %d", bin);
+}
+
+#pr10
+//To convert a binary number into decimal.
+#include <stdio.h>
+void main()
+{
+    int bin, dec=0, rem, base=1;
+    printf("Enter a binary number: ");
+    scanf("%d", &bin);
+    while(bin!=0)
+    {
+        rem=bin%10;
+        dec=dec+rem*base;
+        bin=bin/ 10;
+        base=base*2;
+    }
+    printf("Decimal equivalent = %d", dec);
+}
+
+#pr11
+//To display the Fibonacci series up to the nth term.
+#include <stdio.h>
+void main()
+{
+    int f0=0, f1=1, f2, n, i;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    if(n==1)
+        printf("%d ", f0);
+    else
+    {
+        if(n==2)
+            printf("%d %d ", f0,f1);
+        else
+        {
+            if(n>2)
+            {
+                printf("%d %d ", f0,f1);
+                for(i=1;i<=n-2;i++)
+                {
+                    f2=f0+f1;
+                    printf("%d ", f2);
+                    f0=f1;
+                    f1=f2;
+                }
+            }
+        }
+    }
+}
+
+#pr12
+//To find out the GCD of two numbers.
+#include <stdio.h>
+void main()
+{
+    int n1, n2, dividend, divisor, rem;
+    printf("Enter any two numbers: ");
+    scanf("%d %d", &n1, &n2);
+
+    if(n1>n2)
+    {
+        dividend=n1;
+        divisor=n2;
+    }
+    else
+    {
+        dividend=n2;
+        divisor=n1;
+    }
+    while(divisor)
+    {
+        rem=dividend%divisor;
+        dividend=divisor;
+        divisor=rem;
+    }
+    printf("\nGCD=%d\n", dividend);
+}
+
+#pr13
+//To find the sum of the series 1/1! + 1/2! + ... + 1/n!.
+#include <stdio.h>
+void main()
+{
+    int n, i, fact=1;
+    float sum=0.0;
+    printf("Enter n: ");
+    scanf("%d", &n);
+    for(i=1;i<=n;i++)
+    {
+        fact*=i;
+        sum=sum+(float)1/fact;
+    }
+    printf("\nSum=%f",sum);
+}
+
+#pr14
+//To implement a menu-driven calculator.
+#include <stdio.h>
+void main()
+{
+    int choice, a, b, result;
+    printf("----- CALCULATOR -----\n");
+    printf("1. Addition\n");
+    printf("2. Subtraction\n");
+    printf("3. Multiplication\n");
+    printf("4. Division\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice);
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+    switch(choice)
+    {
+        case 1:
+            result = a + b;
+            printf("Result = %d", result);
+            break;
+        case 2:
+            result = a - b;
+            printf("Result = %d", result);
+            break;
+        case 3:
+            result = a * b;
+            printf("Result = %d", result);
+            break;
+        case 4:
+            if(b != 0)
+                printf("Result = %d", a / b);
+            else
+                printf("Division by zero is not possible.");
+            break;
+        default:
+            printf("Invalid choice.");
+    }
+}
