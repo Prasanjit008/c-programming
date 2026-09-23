@@ -1,0 +1,135 @@
+// Program to display prime numbers within a given range
+
+#include <stdio.h>
+
+void main()
+{
+    int start, end, i, j, flag;
+
+    printf("Enter starting range: ");
+    scanf("%d", &start);
+
+    printf("Enter ending range: ");
+    scanf("%d", &end);
+
+    printf("Prime numbers are:\n");
+
+    for(i = start; i <= end; i++)
+    {
+        if(i < 2)
+            continue;
+
+        flag = 1;
+
+        for(j = 2; j < i; j++)
+        {
+            if(i % j == 0)
+            {
+                flag = 0;
+                break;
+            }
+        }
+
+        if(flag == 1)
+            printf("%d ", i);
+    }
+}
+
+// Program to display palindrome numbers within a given range
+
+#include <stdio.h>
+
+void main()
+{
+    int start, end, i, n, rev, rem;
+
+    printf("Enter starting range: ");
+    scanf("%d", &start);
+
+    printf("Enter ending range: ");
+    scanf("%d", &end);
+
+    printf("Palindrome numbers are:\n");
+
+    for(i = start; i <= end; i++)
+    {
+        n = i;
+        rev = 0;
+
+        while(n > 0)
+        {
+            rem = n % 10;
+            rev = rev * 10 + rem;
+            n = n / 10;
+        }
+
+        if(i == rev)
+            printf("%d ", i);
+    }
+}
+
+// Program to display Armstrong numbers within a given range
+
+#include <stdio.h>
+
+void main()
+{
+    int start, end, i, n, rem, sum;
+
+    printf("Enter starting range: ");
+    scanf("%d", &start);
+
+    printf("Enter ending range: ");
+    scanf("%d", &end);
+
+    printf("Armstrong numbers are:\n");
+
+    for(i = start; i <= end; i++)
+    {
+        n = i;
+        sum = 0;
+
+        while(n > 0)
+        {
+            rem = n % 10;
+            sum = sum + rem * rem * rem;
+            n = n / 10;
+        }
+
+        if(i == sum)
+            printf("%d ", i);
+    }
+}
+
+// Program to display numbers divisible by the sum of their digits
+
+#include <stdio.h>
+
+void main()
+{
+    int start, end, i, n, rem, sum;
+
+    printf("Enter starting range: ");
+    scanf("%d", &start);
+
+    printf("Enter ending range: ");
+    scanf("%d", &end);
+
+    printf("Numbers are:\n");
+
+    for(i = start; i <= end; i++)
+    {
+        n = i;
+        sum = 0;
+
+        while(n > 0)
+        {
+            rem = n % 10;
+            sum = sum + rem;
+            n = n / 10;
+        }
+
+        if(sum != 0 && i % sum == 0)
+            printf("%d ", i);
+    }
+}
