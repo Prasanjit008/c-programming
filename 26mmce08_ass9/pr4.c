@@ -39,6 +39,6 @@ void main()
 
                     sum=sum+a[i][j];
             }
-            printf("\n Sum of the elements in column %d is %d",i,sum);
+            printf("\n Sum of the elements in column %d is %d",j,sum);
     }
 }

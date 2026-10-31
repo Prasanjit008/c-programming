@@ -30,9 +30,9 @@ void main()
 
 
 	printf("\nEnter elements for 2nd matrix: ");
-        for(i=0;i<r1;i++)
+        for(i=0;i<r2;i++)
         {
-                for(j=0;j<c1;j++)
+                for(j=0;j<c2;j++)
                 {
                         scanf("%d",&mat2[i][j]);
                 }
